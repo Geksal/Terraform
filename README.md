@@ -59,3 +59,39 @@ SPA Support: Custom error handling for single-page applications
 
 Technologies:
 AWS CloudFront S3 Origin Access Control Terraform HTML/CSS/JavaScript TLS 1.2+
+
+####################################################################################################################################
+
+####################################################################################################################################
+
+Project 3: Real-time Network Security Monitoring & Analytics Platform
+Architecture Overview:
+Enterprise-grade network monitoring solution with real-time log processing, analytics, and centralized security monitoring using AWS managed services.
+Key Components:
+
+Network Infrastructure: Multi-AZ VPC with public/private subnets and NAT Gateway
+Data Collection: VPC Flow Logs capturing all network traffic metadata
+Real-time Processing: Kinesis Data Firehose for streaming data ingestion
+Search & Analytics: OpenSearch cluster with encryption and VPC isolation
+Data Pipeline: CloudWatch Logs → Kinesis Firehose → OpenSearch → S3 backup
+Security Monitoring: Centralized logging with error handling and backup strategies
+
+Security Features:
+
+Network Isolation: OpenSearch cluster deployed in private subnets with security groups
+Encryption: End-to-end encryption (in-transit and at-rest) for all data
+Access Control: Fine-grained IAM policies with least-privilege principles
+VPC Security: Flow logs monitoring all network traffic for anomaly detection
+TLS Enforcement: Minimum TLS 1.2 for all HTTPS communications
+Data Protection: Automated S3 backup for failed delivery events
+
+Analytics & Monitoring:
+
+Real-time Insights: Live network traffic analysis and visualization
+Log Retention: Configurable retention policies for compliance requirements
+Error Handling: Dead letter queues and CloudWatch error logging
+Performance Monitoring: Multi-AZ deployment with zone awareness
+Data Archival: Compressed storage in S3 for long-term retention
+
+Technologies:
+AWS VPC OpenSearch Kinesis Data Firehose CloudWatch Logs VPC Flow Logs IAM S3 Terraform Security Groups
